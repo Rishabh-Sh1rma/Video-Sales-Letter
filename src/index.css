@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Nunito', system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #faf9f6;
+  color: #292524;
+  overflow: hidden;
+  font-family: var(--font-sans);
+  /* disable text selection for a presentation feel */
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px) }
+  to { opacity: 1; transform: translateY(0) }
+}
+
+.bg-human-touch {
+  background-color: #faf9f6;
+  background-image: radial-gradient(circle at center, #e7e5e4 1.5px, transparent 1.5px);
+  background-size: 36px 36px;
+}
