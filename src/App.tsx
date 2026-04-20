@@ -284,26 +284,7 @@ export default function App() {
         </svg>
       </div>
 
-      {/* Done-For-You System Diagram Layer */}
-      <div className={`absolute right-[5%] lg:right-[10%] top-[25%] lg:top-[20%] w-[380px] lg:w-[480px] flex flex-col justify-center items-center pointer-events-none z-10 transition-all duration-1000 ${slide.showSystemDiagram ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-        {[
-          "Scripting / Copywriting",
-          "Automated Funnel Building",
-          "VSL Post-Production",
-          "Automated Follow-ups System",
-          "Organic Growth (YouTube & LinkedIn)"
-        ].map((item, idx) => (
-          <div key={idx} className={`w-full flex-col flex items-center transition-all duration-700 ${idx <= currentBulletIndex && slide.showSystemDiagram ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            {idx > 0 && (
-              <div className="w-1.5 h-6 lg:h-8 bg-gradient-to-b from-stone-200 to-[#42f5b3] mb-2 rounded-full"></div>
-            )}
-            <div className="w-full bg-white/95 border border-stone-200 rounded-2xl p-5 lg:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.06)] backdrop-blur-md flex items-center justify-center text-center ring-1 ring-white/50 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-2 h-full bg-[#42f5b3]"></div>
-              <span className="font-bold text-stone-800 text-lg lg:text-2xl tracking-tight drop-shadow-sm">{item}</span>
-            </div>
-          </div>
-        ))}
-      </div>
+      {/* DFY Diagram Replaced inside main content flow */}
 
       {/* Helper visual hints for clicking (only visible on first slide temporarily or always opaque) */}
       {currentSlideIndex === 0 && (
@@ -329,7 +310,7 @@ export default function App() {
           )}
 
           {/* Bullet Points Layout */}
-          {slide.bullets && slide.type === 'bullets' && (
+          {slide.bullets && slide.type === 'bullets' && !slide.showSystemDiagram && (
             <ul className="space-y-6 md:space-y-8 mt-12 max-w-[1150px]">
               {slide.bullets.map((bullet, index) => (
                 <li 
@@ -341,6 +322,87 @@ export default function App() {
                 </li>
               ))}
             </ul>
+          )}
+
+          {/* Specialized Done-For-You System Pipeline (Aesthetic Flowchart Layout) */}
+          {slide.showSystemDiagram && slide.bullets && (
+            <div className="mt-12 lg:mt-24 w-full max-w-[1250px] relative mx-auto">
+              
+              {/* --- DESKTOP PIPELINE --- */}
+              <div className="hidden lg:flex items-start justify-between relative mt-8">
+                {/* Horizontal Line System */}
+                <div className="absolute top-8 left-[105px] right-[105px] h-2 z-0">
+                  <div className="w-full h-full bg-stone-200/80 rounded-full absolute top-0 left-0"></div>
+                  <div 
+                    className="h-full bg-[#42f5b3] rounded-full absolute top-0 left-0 transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] shadow-[0_0_20px_rgba(66,245,179,0.5)]"
+                    style={{ width: `${(Math.max(0, currentBulletIndex) / 4) * 100}%` }}
+                  ></div>
+                </div>
+
+                {slide.bullets.map((item, idx) => (
+                  <div 
+                    key={idx} 
+                    className={`relative z-10 flex flex-col items-center w-[210px] transition-all duration-700 ease-out ${idx <= currentBulletIndex ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'}`}
+                  >
+                    {/* Curved subtle connector between diagram parts */}
+                    {idx <= currentBulletIndex && (
+                       <div className="absolute top-[4.5rem] w-px h-8 bg-gradient-to-b from-[#42f5b3]/50 to-transparent"></div>
+                    )}
+                    
+                    {/* Node Circle */}
+                    <div className={`w-16 h-16 rounded-full border-[4px] flex items-center justify-center font-black text-2xl mb-8 shadow-sm transition-all duration-500 delay-[200ms] ${idx <= currentBulletIndex ? 'bg-[#42f5b3] border-[#42f5b3] text-stone-900 shadow-[0_0_30px_rgba(66,245,179,0.5)] scale-110' : 'bg-stone-50/90 border-stone-200 text-stone-400'}`}>
+                      {idx + 1}
+                    </div>
+
+                    {/* Content Card */}
+                    <div className={`bg-white/85 backdrop-blur-xl border p-6 rounded-[24px] w-full text-center relative flex flex-col justify-center min-h-[140px] transition-all duration-500 delay-100 ${idx <= currentBulletIndex ? 'border-[#42f5b3]/40 shadow-[0_10px_40px_rgba(0,0,0,0.06)]' : 'border-stone-200 shadow-none'}`}>
+                      {idx <= currentBulletIndex && (
+                         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#42f5b3] rounded-b-full"></div>
+                      )}
+                      {/* Sub-text visual hint */}
+                      <span className="mb-2 uppercase tracking-widest text-[10px] font-bold text-stone-400">Step 0{idx + 1}</span>
+                      <span className={`font-extrabold text-[20px] leading-[1.2] text-balance transition-colors ${idx <= currentBulletIndex ? 'text-stone-800' : 'text-stone-500'}`}>{item}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* --- MOBILE/TABLET TIMELINE --- */}
+              <div className="flex lg:hidden flex-col gap-8 relative px-2 mt-4">
+                {/* Vertical Line System */}
+                <div className="absolute top-7 bottom-7 left-[36px] w-1.5 z-0">
+                  <div className="w-full h-full bg-stone-200 rounded-full absolute top-0 left-0"></div>
+                  <div 
+                    className="w-full bg-[#42f5b3] rounded-full absolute top-0 left-0 transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] shadow-[0_0_20px_rgba(66,245,179,0.5)]"
+                    style={{ height: `${(Math.max(0, currentBulletIndex) / 4) * 100}%` }}
+                  ></div>
+                </div>
+
+                {slide.bullets.map((item, idx) => (
+                  <div 
+                    key={idx} 
+                    className={`relative z-10 flex flex-row items-center gap-6 transition-all duration-700 ease-out ${idx <= currentBulletIndex ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}
+                  >
+                    {/* Node Circle */}
+                    <div className={`w-14 h-14 shrink-0 rounded-full border-[4px] flex items-center justify-center font-black text-xl shadow-sm transition-all duration-500 delay-[200ms] ${idx <= currentBulletIndex ? 'bg-[#42f5b3] border-[#42f5b3] text-stone-900 shadow-[0_0_25px_rgba(66,245,179,0.4)] scale-110' : 'bg-stone-50 border-stone-200 text-stone-400'}`}>
+                      {idx + 1}
+                    </div>
+
+                    {/* Content Card */}
+                    <div className={`bg-white/85 backdrop-blur-xl border p-5 rounded-[20px] w-full flex items-center justify-start min-h-[90px] relative overflow-hidden transition-all duration-500 delay-100 ${idx <= currentBulletIndex ? 'border-[#42f5b3]/40 shadow-[0_8px_30px_rgb(0,0,0,0.06)]' : 'border-stone-200 shadow-none'}`}>
+                       {idx <= currentBulletIndex && (
+                         <div className="absolute left-0 top-1/2 -translate-y-1/2 h-12 w-1 bg-[#42f5b3] rounded-r-full"></div>
+                       )}
+                      <div className="flex flex-col">
+                        <span className="mb-1 uppercase tracking-widest text-[9px] font-bold text-stone-400">Step 0{idx + 1}</span>
+                        <span className={`font-extrabold text-[19px] leading-tight ${idx <= currentBulletIndex ? 'text-stone-800' : 'text-stone-500'}`}>{item}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+            </div>
           )}
 
           {/* Metric Layout (ROI Slide) - 3-column grid with bigger squares and the 6th Ultimate ROI box */}
