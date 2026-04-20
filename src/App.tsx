@@ -17,11 +17,11 @@ const presentationData = [
     title: "The Real Problem Most Businesses Face",
     subtitle: "Can you relate to any of these?",
     bullets: [
-      "Do you start each month wondering where that next client is going to come from?",
-      "Do you hate the idea of chasing leads instead of having them chase you?",
-      "Are traditional methods like cold calling and networking no longer getting results?",
-      "Have you tried paying for leads, but only received low-quality or shared lists?",
-      "Are you paying a monthly retainer to an agency but struggling to see tangible ROI?"
+      "Unpredictable Revenue",
+      "Chasing Leads",
+      "Dead Marketing",
+      "Shared Leads",
+      "Wasted Retainers"
     ]
   },
   {
@@ -29,11 +29,11 @@ const presentationData = [
     title: "The Old Model vs. The New Model",
     subtitle: "Moving away from unpredictability.",
     bullets: [
-      "The Old Model is unscalable: you're stuck doing manual busywork and relying on luck.",
-      "The New Model is completely automated, predictable, profitable, and highly scalable.",
-      "You easily attract ONLY the clients you want to work with and filter out the rest.",
-      "You generate high-quality leads, appointments, and clients predictably on demand.",
-      "Best of all, you are in full control of exactly how many clients you win each month."
+      "Manual Work",
+      "Complete Automation",
+      "Ideal Clients",
+      "Predictable Growth",
+      "Full Control"
     ]
   },
   {
@@ -41,10 +41,10 @@ const presentationData = [
     title: "STEP 1: Stop Worrying About a Niche",
     subtitle: "There is something vastly more important...",
     bullets: [
-      "Everyone says 'find a niche', but solving a big, painful problem is what actually matters.",
-      "If you don't solve a truly painful problem, it doesn't matter how good your marketing is.",
-      "Once you identify that massive pain point, you must learn exactly how to communicate it.",
-      "When articulated perfectly, prospects will naturally get excited to learn how you can help."
+      "Solve Pain",
+      "Ignore Niches",
+      "Communicate Clearly",
+      "Build Excitement"
     ]
   },
   {
@@ -52,10 +52,10 @@ const presentationData = [
     title: "STEP 2: Create a Video Sales Letter (VSL)",
     subtitle: "Your automated salesperson working 24/7.",
     bullets: [
-      "Imagine a salesperson who speaks to leads perfectly, 24/7—even booking calls at 4:30 AM.",
-      "A Video Sales Letter is a fully automated way to build immense trust and provide value.",
-      "Without a VSL, campaigns fail because strangers don't know, like, or trust you yet.",
-      "No expensive gear needed—a simple presentation explaining exactly how you help works best."
+      "24/7 Salesperson",
+      "Build Trust",
+      "Educate Leads",
+      "Keep Simple"
     ]
   },
   {
@@ -63,11 +63,11 @@ const presentationData = [
     title: "STEP 3: Create an Engineered Sales Funnel",
     subtitle: "A specific path designed to turn strangers into booked calls.",
     bullets: [
-      "1. Landing Page: Capture their name & email by offering the valuable VSL video.",
-      "2. Video Page: Your VSL does the heavy lifting, education, and selling.",
-      "3. Schedule Page: Qualified prospects book directly into your personal calendar.",
-      "4. Application Page: They fill out a short form so you know exactly who you are speaking to.",
-      "5. Automated Follow-ups & Retargeting: Crucial step because not everyone books immediately."
+      "Landing Page",
+      "Video Page",
+      "Booking Page",
+      "Application Form",
+      "Automated Follow-up"
     ]
   },
   {
@@ -75,10 +75,10 @@ const presentationData = [
     title: "STEP 4: Focus on Marketing That Gets Results",
     subtitle: "The 80/20 Rule: Stop the busy work.",
     bullets: [
-      "Stop the 80% busy work (random daily social posting, blind networking, cold pitches).",
-      "LinkedIn: Direct messaging to specifically offer your free, valuable video—no pitching upfront.",
-      "Organic SEO: Only create content on topics your exact potential clients are actually searching for.",
-      "Facebook & TikTok Ads: Predictably scale by sending targeted traffic directly to your new funnel."
+      "Stop Busywork",
+      "Direct Outreach",
+      "Targeted SEO",
+      "Paid Ads"
     ]
   },
   {
@@ -86,10 +86,10 @@ const presentationData = [
     title: "The Predictable Math",
     subtitle: "Total control over your growth.",
     bullets: [
-      "Once you know your numbers (for example: $50 per appointment), you have absolute control.",
-      "Want 10 appointments this month? You simply invest $500.",
-      "Want 30 appointments? You invest $1,500.",
-      "These are exclusive, high-quality booked sales appointments with people expecting your call."
+      "Know Numbers",
+      "Predict Costs",
+      "Scale Predictably",
+      "Exclusive Appointments"
     ]
   },
   {
@@ -97,10 +97,10 @@ const presentationData = [
     title: "Imagine the Result...",
     subtitle: "What happens if you execute all of this?",
     bullets: [
-      "No longer starting the month wondering where your next client is coming from.",
-      "No longer wasting time relying on networking events, unpredictable referrals, or word of mouth.",
-      "Take complete strangers to booked appointments reliably—100% online and automated.",
-      "Know exactly how many leads, appointments, and clients you will comfortably win."
+      "Eliminate Guesswork",
+      "Reclaim Time",
+      "Automate Growth",
+      "Guarantee Success"
     ]
   },
   {
@@ -108,9 +108,9 @@ const presentationData = [
     title: "STEP 5: Learn From Someone Who Has Done It",
     subtitle: "It took me 10 years to completely figure this out.",
     bullets: [
-      "I spent a decade speaking, cold calling, and exhausting myself finding what actually works.",
-      "Option 1 - The Hard Way: Go alone, spend years of trial and error, and thousands of dollars wasted.",
-      "Option 2 - The Easy Way: Shortcut the process and plug into a proven, battle-tested system."
+      "10-Year Shortcut",
+      "The Hard Way",
+      "The Easy Way"
     ]
   },
   {
@@ -118,11 +118,11 @@ const presentationData = [
     title: "Our Done-For-You System",
     subtitle: "We set everything up, get you results, and manage it.",
     bullets: [
-      "We write the copy, create the exact VSL script, and professionally edit your video.",
-      "We build the entire automated sales funnel and write 3 full months of automated follow-up emails.",
-      "We set up your paid ads (Facebook/TikTok) to get you leads within the first few days.",
-      "We script, edit, and distribute organic content for compounding long-term growth.",
-      "The entire system is completely set up and generating leads for you in just 30 days."
+      "Copywriting",
+      "Funnel Building",
+      "Ads Management",
+      "Organic Content",
+      "30-Day Launch"
     ]
   },
   {
@@ -137,7 +137,7 @@ const presentationData = [
       { label: "Additional Yearly Revenue", value: "$144k - $216k" }
     ],
     bullets: [
-      "How much would you invest to add over $200k to your business every single year?"
+      "What is the ultimate ROI?"
     ]
   },
   {
@@ -145,10 +145,10 @@ const presentationData = [
     title: "Our Guarantee",
     subtitle: "I don't want you to ever waste money again.",
     bullets: [
-      "So many people buy courses or hire agencies that provide absolutely zero support when it counts.",
-      "We exclusively offer Lifetime 1-to-1 private support directly with me.",
-      "We work closely with you for as long as it takes for you to see actual results.",
-      "No hidden fees, no dropping you after 90 days, and no paying extra for 'more support'."
+      "Zero Risk",
+      "1-on-1 Support",
+      "Results Guaranteed",
+      "No Hidden Fees"
     ]
   },
   {
@@ -252,26 +252,26 @@ export default function App() {
         <div key={`slide-${currentSlideIndex}`} className="fade-in">
           
           {/* Headings */}
-          <h1 className={`font-extrabold tracking-tight text-stone-800 leading-[1.15] mb-2 ${slide.type === 'title' ? 'text-4xl md:text-6xl lg:text-[72px] text-center max-w-[1100px] mx-auto py-8' : 'text-3xl md:text-5xl lg:text-[52px]'}`}>
+          <h1 className={`font-extrabold tracking-tight text-stone-800 leading-[1.15] mb-2 ${slide.type === 'title' ? 'text-4xl md:text-6xl lg:text-[72px] text-center max-w-[1100px] mx-auto py-8' : 'text-3xl md:text-5xl lg:text-[56px]'}`}>
             {slide.title}
           </h1>
           
           {slide.subtitle && (
-            <p className={`text-xl md:text-[26px] text-stone-500 font-medium mb-6 ${slide.type === 'title' ? 'text-center mt-6' : 'mt-2'}`}>
+            <p className={`text-xl md:text-[28px] text-stone-500 font-medium mb-6 ${slide.type === 'title' ? 'text-center mt-6 max-w-[800px] mx-auto' : 'mt-4'}`}>
               {slide.subtitle}
             </p>
           )}
 
           {/* Bullet Points Layout */}
           {slide.bullets && slide.type === 'bullets' && (
-            <ul className="space-y-4 md:space-y-5 mt-6 max-w-[1150px]">
+            <ul className="space-y-6 md:space-y-8 mt-12 max-w-[1150px]">
               {slide.bullets.map((bullet, index) => (
                 <li 
                   key={index} 
-                  className={`text-xl md:text-[24px] leading-[1.4] font-medium text-stone-700 flex items-start transition-all duration-700 ${index <= currentBulletIndex ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+                  className={`text-3xl md:text-[44px] leading-tight font-black tracking-tight text-stone-700 flex items-center transition-all duration-700 ${index <= currentBulletIndex ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
                 >
-                  <ArrowRight size={28} className="mr-4 text-[#42f5b3] shrink-0 opacity-100 mt-1 drop-shadow-sm" />
-                  <span className="flex-1">{bullet}</span>
+                  <ArrowRight size={44} strokeWidth={2.5} className="mr-6 text-[#42f5b3] shrink-0 opacity-100 drop-shadow-md" />
+                  <span className="flex-1 drop-shadow-sm">{bullet}</span>
                 </li>
               ))}
             </ul>
@@ -279,7 +279,7 @@ export default function App() {
 
           {/* Metric Layout (ROI Slide) - Adjusted to a 3-column grid to save vertical space */}
           {slide.metrics && slide.type === 'metric' && (
-            <div className="mt-6">
+            <div className="mt-8">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mb-8 max-w-[1200px]">
                 {slide.metrics.map((metric, index) => (
                   <div 
@@ -297,7 +297,7 @@ export default function App() {
                 return (
                   <div 
                     key={index} 
-                    className={`text-2xl md:text-[28px] font-bold text-center text-[#42f5b3] drop-shadow-[0_1px_1px_rgba(0,0,0,0.2)] transition-all duration-700 mt-4 ${bulletIndex <= currentBulletIndex ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                    className={`text-2xl md:text-[32px] font-bold text-center text-[#42f5b3] drop-shadow-[0_1px_1px_rgba(0,0,0,0.2)] transition-all duration-700 mt-6 ${bulletIndex <= currentBulletIndex ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                   >
                     {bullet}
                   </div>
