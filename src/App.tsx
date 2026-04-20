@@ -85,11 +85,13 @@ const presentationData = [
     type: "bullets",
     title: "The Predictable Math",
     subtitle: "Total control over your growth.",
+    showMathGraph: true,
     bullets: [
-      "Know Numbers",
-      "Predict Costs",
-      "Scale Predictably",
-      "Exclusive Appointments"
+      "Choose Exact Volume",
+      "10 Appts = $500",
+      "30 Appts = $1,500",
+      "Exclusive Booked Calls",
+      "High-Intent Prospects"
     ]
   },
   {
@@ -108,7 +110,6 @@ const presentationData = [
     title: "STEP 5: Learn From Someone Who Has Done It",
     subtitle: "It took me 10 years to completely figure this out.",
     bullets: [
-      "10-Year Shortcut",
       "The Hard Way",
       "The Easy Way"
     ]
@@ -117,27 +118,26 @@ const presentationData = [
     type: "bullets",
     title: "Our Done-For-You System",
     subtitle: "We set everything up, get you results, and manage it.",
+    showSystemDiagram: true,
     bullets: [
-      "Copywriting",
+      "Copywriting & Scripts",
       "Funnel Building",
-      "Ads Management",
-      "Organic Content",
-      "30-Day Launch"
+      "VSL Production",
+      "Follow-up Systems",
+      "Organic Growth Platforms"
     ]
   },
   {
     type: "metric",
     title: "What is this worth to you?",
-    subtitle: "Let's do the conservative math.",
+    subtitle: "Let's do the math.",
     metrics: [
       { label: "Appointments per month", value: "20 - 30" },
       { label: "Conversion Rate", value: "20%" },
       { label: "New Clients per month", value: "4 - 6" },
       { label: "Average Value per Client", value: "$3,000" },
-      { label: "Additional Yearly Revenue", value: "$144k - $216k" }
-    ],
-    bullets: [
-      "What is the ultimate ROI?"
+      { label: "Additional Yearly Revenue", value: "$144k - $216k" },
+      { label: "What is the", value: "Ultimate ROI?", highlight: true }
     ]
   },
   {
@@ -145,10 +145,10 @@ const presentationData = [
     title: "Our Guarantee",
     subtitle: "I don't want you to ever waste money again.",
     bullets: [
-      "Zero Risk",
-      "1-on-1 Support",
-      "Results Guaranteed",
-      "No Hidden Fees"
+      "Absolute Certainty",
+      "Complete Transparency",
+      "Lifetime Partnership",
+      "Guaranteed Success"
     ]
   },
   {
@@ -239,6 +239,72 @@ export default function App() {
         ></div>
       </div>
 
+      {/* Growth Graph Decorative Element (Shown ONLY on Predictable Math) */}
+      <div className={`absolute right-[5%] lg:right-[10%] bottom-[15%] w-[450px] lg:w-[550px] transition-all duration-1000 ease-out pointer-events-none z-0 ${slide.showMathGraph && currentBulletIndex >= 0 ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-24 scale-95'}`}>
+        <svg viewBox="0 0 550 400" className="w-full h-full drop-shadow-[0_0_20px_rgba(66,245,179,0.2)]">
+          <defs>
+            <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#42f5b3" stopOpacity="0.4" />
+              <stop offset="100%" stopColor="#42f5b3" stopOpacity="1" />
+            </linearGradient>
+            <linearGradient id="fillGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#42f5b3" stopOpacity="0.15" />
+              <stop offset="100%" stopColor="#42f5b3" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+          
+          {/* Axes */}
+          <line x1="80" y1="340" x2="520" y2="340" stroke="#d6d3d1" strokeWidth="3" strokeLinecap="round" />
+          <line x1="80" y1="340" x2="80" y2="40" stroke="#d6d3d1" strokeWidth="3" strokeLinecap="round" />
+          
+          {/* Graph Shape */}
+          <path d="M 80 340 L 80 320 Q 250 290 480 80 L 480 340 Z" fill="url(#fillGrad)" />
+          <path d="M 80 320 Q 250 290 480 80" fill="none" stroke="url(#lineGrad)" strokeWidth="8" strokeLinecap="round" />
+          
+          {/* Highlight Points & Labels */}
+          {currentBulletIndex >= 1 && (
+            <g className="transition-opacity duration-700 animate-fade-in">
+              <circle cx="210" cy="272" r="8" fill="#fff" stroke="#42f5b3" strokeWidth="4" />
+              <text x="210" y="245" fill="#42f5b3" fontSize="22" fontWeight="bold" textAnchor="middle" letterSpacing="0.5">$500</text>
+              <text x="210" y="305" fill="#78716c" fontSize="16" fontWeight="bold" textAnchor="middle">10 Appointments</text>
+            </g>
+          )}
+
+          {currentBulletIndex >= 2 && (
+            <g className="transition-opacity duration-700 animate-fade-in delay-300">
+              <circle cx="430" cy="120" r="10" fill="#fff" stroke="#42f5b3" strokeWidth="5" />
+              <text x="430" y="85" fill="#42f5b3" fontSize="26" fontWeight="bold" textAnchor="middle" letterSpacing="0.5">$1,500</text>
+              <text x="430" y="155" fill="#78716c" fontSize="18" fontWeight="bold" textAnchor="middle">30 Appointments</text>
+            </g>
+          )}
+          
+          {/* Axis Labels */}
+          <text x="300" y="380" fill="#a8a29e" fontSize="16" fontWeight="bold" textAnchor="middle" letterSpacing="2">AD SPEND</text>
+          <text x="-190" y="40" transform="rotate(-90)" fill="#a8a29e" fontSize="16" fontWeight="bold" textAnchor="middle" letterSpacing="2">APPOINTMENTS</text>
+        </svg>
+      </div>
+
+      {/* Done-For-You System Diagram Layer */}
+      <div className={`absolute right-[5%] lg:right-[10%] top-[25%] lg:top-[20%] w-[380px] lg:w-[480px] flex flex-col justify-center items-center pointer-events-none z-10 transition-all duration-1000 ${slide.showSystemDiagram ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+        {[
+          "Scripting / Copywriting",
+          "Automated Funnel Building",
+          "VSL Post-Production",
+          "Automated Follow-ups System",
+          "Organic Growth (YouTube & LinkedIn)"
+        ].map((item, idx) => (
+          <div key={idx} className={`w-full flex-col flex items-center transition-all duration-700 ${idx <= currentBulletIndex && slide.showSystemDiagram ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            {idx > 0 && (
+              <div className="w-1.5 h-6 lg:h-8 bg-gradient-to-b from-stone-200 to-[#42f5b3] mb-2 rounded-full"></div>
+            )}
+            <div className="w-full bg-white/95 border border-stone-200 rounded-2xl p-5 lg:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.06)] backdrop-blur-md flex items-center justify-center text-center ring-1 ring-white/50 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-2 h-full bg-[#42f5b3]"></div>
+              <span className="font-bold text-stone-800 text-lg lg:text-2xl tracking-tight drop-shadow-sm">{item}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
       {/* Helper visual hints for clicking (only visible on first slide temporarily or always opaque) */}
       {currentSlideIndex === 0 && (
          <div className="absolute bottom-8 right-8 flex items-center gap-2 text-stone-400 text-sm font-medium opacity-60">
@@ -246,18 +312,18 @@ export default function App() {
          </div>
       )}
 
-      {/* Slide Content - Sized and Spaced to Prevent Overspill */}
-      <div className="w-full max-w-[1280px] px-8 md:px-16 z-10 flex flex-col justify-center h-full pointer-events-none py-20">
+      {/* Slide Content - Shifted up with justify-start and top padding */}
+      <div className="w-full max-w-[1280px] px-8 md:px-16 z-10 flex flex-col justify-start pt-32 md:pt-[18vh] h-full pointer-events-none pb-20">
         
         <div key={`slide-${currentSlideIndex}`} className="fade-in">
           
           {/* Headings */}
-          <h1 className={`font-extrabold tracking-tight text-stone-800 leading-[1.15] mb-2 ${slide.type === 'title' ? 'text-4xl md:text-6xl lg:text-[72px] text-center max-w-[1100px] mx-auto py-8' : 'text-3xl md:text-5xl lg:text-[56px]'}`}>
+          <h1 className={`font-extrabold tracking-tight text-balance text-stone-800 leading-[1.12] mb-2 ${slide.type === 'title' ? 'text-[42px] md:text-6xl lg:text-[76px] text-center max-w-[1100px] mx-auto py-8' : 'text-4xl md:text-5xl lg:text-[60px]'}`}>
             {slide.title}
           </h1>
           
           {slide.subtitle && (
-            <p className={`text-xl md:text-[28px] text-stone-500 font-medium mb-6 ${slide.type === 'title' ? 'text-center mt-6 max-w-[800px] mx-auto' : 'mt-4'}`}>
+            <p className={`text-xl md:text-[28px] text-balance text-stone-500 font-medium mb-6 ${slide.type === 'title' ? 'text-center mt-6 max-w-[800px] mx-auto' : 'mt-4'}`}>
               {slide.subtitle}
             </p>
           )}
@@ -277,32 +343,20 @@ export default function App() {
             </ul>
           )}
 
-          {/* Metric Layout (ROI Slide) - Adjusted to a 3-column grid to save vertical space */}
+          {/* Metric Layout (ROI Slide) - 3-column grid with bigger squares and the 6th Ultimate ROI box */}
           {slide.metrics && slide.type === 'metric' && (
-            <div className="mt-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mb-8 max-w-[1200px]">
+            <div className="mt-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-[1400px]">
                 {slide.metrics.map((metric, index) => (
                   <div 
                     key={index} 
-                    className={`p-6 border border-stone-200 rounded-3xl bg-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.04)] backdrop-blur-sm transition-all duration-700 flex flex-col justify-center ${index <= currentBulletIndex ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+                    className={`p-8 md:p-10 border rounded-[32px] backdrop-blur-sm transition-all duration-700 flex flex-col justify-center ${index <= currentBulletIndex ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'} ${metric.highlight ? 'border-[#42f5b3] bg-[#42f5b3]/10 shadow-[0_8px_30px_rgba(66,245,179,0.15)] ring-2 ring-[#42f5b3]/30' : 'border-stone-200 bg-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.04)]'}`}
                   >
-                    <div className="text-stone-500 font-semibold uppercase tracking-wide text-[13px] mb-2">{metric.label}</div>
-                    <div className="text-3xl md:text-[40px] font-black text-stone-800 leading-tight">{metric.value}</div>
+                    <div className={`font-semibold uppercase tracking-wide text-sm md:text-base mb-3 ${metric.highlight ? 'text-[#42f5b3]' : 'text-stone-500'}`}>{metric.label}</div>
+                    <div className={`text-4xl md:text-[52px] font-black leading-tight tracking-tight ${metric.highlight ? 'text-[#42f5b3]' : 'text-stone-800'}`}>{metric.value}</div>
                   </div>
                 ))}
               </div>
-              
-              {slide.bullets && slide.bullets.map((bullet, index) => {
-                const bulletIndex = (slide.metrics ? slide.metrics.length : 0) + index;
-                return (
-                  <div 
-                    key={index} 
-                    className={`text-2xl md:text-[32px] font-bold text-center text-[#42f5b3] drop-shadow-[0_1px_1px_rgba(0,0,0,0.2)] transition-all duration-700 mt-6 ${bulletIndex <= currentBulletIndex ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                  >
-                    {bullet}
-                  </div>
-                )
-              })}
             </div>
           )}
 
